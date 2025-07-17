@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+  "test": "jest",
+  "test:unit": "jest --selectProjects=client --testPathPattern=unit && jest --selectProjects=server --testPathPattern=unit",
+  "test:integration": "jest --selectProjects=client --testPathPattern=integration && jest --selectProjects=server --testPathPattern=integration",
+  "test:coverage": "jest --coverage",
+  "cypress:open": "cypress open"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.4"
+  },
+  "devDependencies": {
+    "jest": "^30.0.4",
+    "mongodb-memory-server": "^10.1.4",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.3"
+  }
+}
