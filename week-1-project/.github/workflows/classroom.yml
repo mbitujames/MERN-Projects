@@ -1,0 +1,62 @@
+tests:
+  - name: Check if insert_books.js exists
+    setup: npm install mongodb
+    run: test -f insert_books.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check if queries.js exists
+    run: test -f queries.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Run insert_books.js
+    setup: npm install mongodb
+    run: node insert_books.js
+    input: ""
+    output: "books were successfully inserted into the database"
+    comparison: included
+    timeout: 20
+    points: 20
+
+  - name: Check basic query in queries.js
+    setup: npm install mongodb
+    run: grep -q "find({" queries.js && grep -q "genre:" queries.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 15
+
+  - name: Check advanced query in queries.js
+    setup: npm install mongodb
+    run: grep -q "\$gt" queries.js && grep -q "\$and" queries.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 15
+
+  - name: Check aggregation pipeline in queries.js
+    setup: npm install mongodb
+    run: grep -q "aggregate" queries.js && grep -q "\$group" queries.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 15
+
+  - name: Check indexing in queries.js
+    setup: npm install mongodb
+    run: grep -q "createIndex" queries.js && grep -q "explain" queries.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 15 

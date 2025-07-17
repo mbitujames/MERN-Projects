@@ -1,0 +1,88 @@
+tests:
+  - name: Check if server.js exists
+    run: test -f server/server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 5
+
+  - name: Check if MongoDB connection is configured
+    run: grep -q "mongoose.connect" server/server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 5
+
+  - name: Check for Post model
+    run: test -f server/models/Post.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for API routes
+    run: grep -q "app.use.*\/api\/" server/server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check if client App.jsx exists
+    run: test -f client/src/App.jsx
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 5
+
+  - name: Check for API service in client
+    run: test -f client/src/services/api.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for React Router usage
+    run: grep -q "react-router-dom" client/package.json
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for React hooks usage
+    run: grep -q "useState\|useEffect\|useContext" client/src/ -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for form validation
+    run: grep -q "validation\|validate\|Joi\|yup\|validator" server/ -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for authentication implementation
+    run: grep -q "auth\|login\|register\|jwt\|token\|password" server/ -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 15
+
+  - name: Check for error handling
+    run: grep -q "try.*catch\|error.*handling\|catch.*error" server/ -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10 

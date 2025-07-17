@@ -1,0 +1,28 @@
+{
+  "name": "week-2-express-js-assignment-mbitujames",
+  "version": "1.0.0",
+  "description": "[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19785020&assignment_repo_type=AssignmentRepo)\r # Express.js RESTful API Assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PLP-MERN-Stack-Development/week-2-express-js-assignment-mbitujames.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PLP-MERN-Stack-Development/week-2-express-js-assignment-mbitujames/issues"
+  },
+  "homepage": "https://github.com/PLP-MERN-Stack-Development/week-2-express-js-assignment-mbitujames#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "uuid": "^11.1.0"
+  }
+}

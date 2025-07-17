@@ -1,0 +1,80 @@
+tests:
+  - name: Check if package.json exists
+    run: test -f package.json
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 5
+
+  - name: Check for React and Tailwind dependencies
+    run: grep -q "react" package.json && grep -q "tailwindcss" package.json
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for App.jsx file
+    run: test -f src/App.jsx
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 5
+
+  - name: Check for Button component
+    run: test -f src/components/Button.jsx
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for TaskManager component
+    run: test -f src/components/TaskManager.jsx
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for useState hook usage
+    run: grep -q "useState" src/components/TaskManager.jsx
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for useEffect hook usage
+    run: grep -q "useEffect" src/components/TaskManager.jsx
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for API integration
+    run: grep -q "fetch" src/App.jsx || grep -q "axios" src/App.jsx || grep -q "fetch" src/components/ -r || grep -q "axios" src/components/ -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 15
+
+  - name: Check for Tailwind CSS usage
+    run: grep -q "className=" src/components/ -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 15
+
+  - name: Check for build script
+    run: grep -q "\"build\"" package.json
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10 

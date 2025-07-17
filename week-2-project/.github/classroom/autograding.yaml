@@ -1,0 +1,82 @@
+tests:
+  - name: Check if server.js exists
+    setup: npm install express body-parser uuid
+    run: test -f server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check if package.json exists
+    run: test -f package.json
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for Express import
+    run: grep -q "require.*express" server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for GET /api/products route
+    run: grep -q "app.get.*\/api\/products" server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for GET /api/products/:id route
+    run: grep -q "app.get.*\/api\/products\/.*id" server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for POST /api/products route
+    run: grep -q "app.post.*\/api\/products" server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for PUT /api/products/:id route
+    run: grep -q "app.put.*\/api\/products\/.*id" server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for DELETE /api/products/:id route
+    run: grep -q "app.delete.*\/api\/products\/.*id" server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for middleware implementation
+    run: grep -q "app.use" server.js
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Start server and check response
+    setup: npm install express body-parser uuid
+    run: timeout 5 node server.js & sleep 2 && curl -s http://localhost:3000/ | grep -q "Welcome"
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10 
