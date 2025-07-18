@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1752844485802" clover="3.2.0">
+  <project timestamp="1752844485802" name="All files">
+    <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="6" coveredelements="6" complexity="0" loc="6" ncloc="6" packages="1" files="2" classes="2"/>
+    <file name="Message.js" path="C:\Users\mbitu\week-7-devops-deployment-assignment-mbitujames\backend\models\Message.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+    </file>
+    <file name="User.js" path="C:\Users\mbitu\week-7-devops-deployment-assignment-mbitujames\backend\models\User.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

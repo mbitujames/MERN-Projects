@@ -1,0 +1,80 @@
+tests:
+  - name: Check for GitHub workflow files
+    run: test -d .github/workflows
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for CI/CD configuration
+    run: grep -q "ci\|cd\|deploy\|build\|test" .github/workflows -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for environment variable templates
+    run: test -f .env.example
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for production build scripts
+    run: grep -q "\"build\"" client/package.json && grep -q "\"build\"" server/package.json
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for secure HTTP headers
+    run: grep -q "helmet\|cors\|xss\|security" server/src -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for MongoDB Atlas configuration
+    run: grep -q "mongodb+srv\|atlas\|cluster" .env.example || grep -q "mongodb+srv\|atlas\|cluster" server/src -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for health check endpoint
+    run: grep -q "health\|status\|ping" server/src -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for error tracking setup
+    run: grep -q "sentry\|error.*tracking\|monitoring" server/src -r || grep -q "sentry\|error.*tracking\|monitoring" client/src -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for deployment documentation
+    run: grep -q "deploy\|hosting\|production" README.md
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10
+
+  - name: Check for logging configuration
+    run: grep -q "log\|winston\|morgan\|debug" server/src -r
+    input: ""
+    output: ""
+    comparison: included
+    timeout: 10
+    points: 10 
