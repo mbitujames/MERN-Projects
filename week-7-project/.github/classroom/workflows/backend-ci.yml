@@ -1,0 +1,35 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./backend
+
+    - name: Run tests
+      run: npm test
+      working-directory: ./backend
+
+    - name: Upload coverage report
+      if: success() && steps.test.outcome == 'success'
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: backend/coverage

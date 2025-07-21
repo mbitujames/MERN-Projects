@@ -1,0 +1,30 @@
+name: Backend CD
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./backend
+
+    - name: Run tests
+      run: npm test
+      working-directory: ./backend
+
+    - name: Deploy backend
+      run: echo "Add your backend deployment commands here"
+      # Example: scp, ssh, or deploy to cloud provider
